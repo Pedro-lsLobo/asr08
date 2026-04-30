@@ -14,7 +14,6 @@ Este exemplo demonstra o uso de **stubs de cliente como referências globais** e
 ├── server.py         # servidor de listas (gerencia as listas compartilhadas)
 ├── client.py         # auxiliar de cliente (envio e recebimento de mensagens)
 ├── dbclient.py       # stub DBClient (implementação da referência global)
-├── run_server.py     # ponto de entrada para a máquina do servidor
 ├── run_client1.py    # ponto de entrada para a máquina do client 1
 └── run_client2.py    # ponto de entrada para a máquina do client 2
 ```
