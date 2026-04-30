@@ -100,7 +100,6 @@ O código original (`run.py`) usava `multiprocessing` para rodar tudo em uma ún
 - Buffer do `recv` aumentado de `1024` para `4096` bytes.
 
 ### Arquivos novos
-- **`run_server.py`** — substitui a parte do servidor que estava em `run.py`; inicia o servidor de forma independente.
 - **`run_client1.py`** — substitui a função `client1()` de `run.py`; inclui um `sleep(3)` para garantir que o Client 2 já está pronto antes de enviar o stub.
 - **`run_client2.py`** — substitui a função `client2()` de `run.py`; recebe e usa o stub, depois envia STOP ao servidor.
 - **`run.py`** — mantido no repositório como referência (versão original para uma única máquina), mas não é usado na execução distribuída.
