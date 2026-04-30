@@ -1,5 +1,5 @@
 # asr08
-.
+
 # Stubs como Referências Remotas — Exemplo RPC
 
 Este exemplo demonstra o uso de **stubs de cliente como referências globais** em sistemas RPC, conforme descrito nas Notas 4.5 e 4.8 de Tanenbaum & van Steen (2025). Um stub `DBClient` é criado por um cliente, serializado, enviado pela rede para um segundo cliente, e usado lá para operar sobre a mesma lista remota — sem que o segundo cliente precise saber previamente o endereço do servidor ou o ID da lista.
