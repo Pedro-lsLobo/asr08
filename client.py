@@ -1,22 +1,21 @@
-import pickle
-from socket   import *
-from constRPC import *
-
+import pickle, os			 #-
+from socket		import * #-
+from constRPC import * #-
+#-
 class Client:
-  def __init__(self, port):
-    self.host = ''                          # escuta em todas as interfaces
-    self.port = port
-    self.sock = socket()
-    self.sock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
-    self.sock.bind((self.host, self.port))
-    self.sock.listen(2)
+	def __init__(self, port):
+		self.host = '0.0.0.0'
+		self.port = port											 # port it will listen to
+		self.sock = socket()									 # socket for incoming calls
+		self.sock.bind((self.host, self.port)) # bind socket to an address
+		self.sock.listen(2)										 # max num connections
 
-  def sendTo(self, host, port, data):
-    sock = socket()
-    sock.connect((host, port))
-    sock.send(pickle.dumps(data))
-    sock.close()
+	def sendTo(self, host, port, data):
+		sock = socket()								
+		sock.connect((host, port))		# connect to server (blocking call)
+		sock.send(pickle.dumps(data)) # send some data
+		sock.close()
 
-  def recvAny(self):
-    (conn, addr) = self.sock.accept()
-    return conn.recv(4096)
+	def recvAny(self):
+		(conn, addr) = self.sock.accept()
+		return conn.recv(1024)
