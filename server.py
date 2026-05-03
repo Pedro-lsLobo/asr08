@@ -4,13 +4,13 @@ from constRPC import *
 
 class Server:
   def __init__(self, port=PORTS):
-    self.host = ''                        # escuta em todas as interfaces
-    self.port = port                      # porta de escuta
-    self.sock = socket()                  # socket para conexões
+    self.host = ''
+    self.port = port
+    self.sock = socket()
     self.sock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
     self.sock.bind((self.host, self.port))
     self.sock.listen(5)
-    self.setOfLists = {}                  # dicionário de listas gerenciadas
+    self.setOfLists = {}
     print(f"[Server] Escutando em porta {self.port}...")
 
   def run(self):
