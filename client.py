@@ -4,7 +4,7 @@ from constRPC import *
 
 class Client:
   def __init__(self, port):
-    self.host = ''                          # escuta em todas as interfaces
+    self.host = ''
     self.port = port
     self.sock = socket()
     self.sock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
